@@ -22,7 +22,7 @@ public class main extends StateBasedGame
   }
  
 
-  @Override
+@Override
   public void update(GameContainer gc, int delta) throws SlickException
   {
 	  player.update(gc.getInput());
@@ -31,9 +31,8 @@ public class main extends StateBasedGame
   @Override
   public void render(GameContainer gc, Graphics g) throws SlickException
   {
-	  world.gendown("1.map");
+	  world.gen("1.map");
 	  player.render();
-	  world.genup("1.map");
 	  
   }
  
