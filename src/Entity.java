@@ -5,10 +5,9 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;  
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Entity extends BasicGameState
+public class Entity
 {  
            
-        private Input input;
         private float x= 200, y = 200, i=1, pas=3;
         private SpriteSheet heroH, heroB,heroL,heroR;
         private Animation courirVbas,courirVhaut,courirVgauche,courirVdroite;
@@ -19,9 +18,9 @@ public class Entity extends BasicGameState
         
   public int getID() {return ID;}
 
-  public void init(GameContainer gc,StateBasedGame game) throws SlickException
+  public void init() throws SlickException
   {
-      input = gc.getInput();
+      
       
       heroB = new SpriteSheet("res/images/sprites/HerosB.png", 32,32);
       heroH = new SpriteSheet("res/images/sprites/HerosH.png", 32,32);
@@ -41,7 +40,7 @@ public class Entity extends BasicGameState
       heroRR = heroR.getSprite(0, 0);
   }
  
-  public void update(GameContainer gc,StateBasedGame game, int delta) throws SlickException
+  public void update(Input input) throws SlickException
   {
       
     if ( input.isKeyDown(Input.KEY_UP))
@@ -118,7 +117,7 @@ public class Entity extends BasicGameState
       
   }
  
-  public void render(GameContainer gc,StateBasedGame game,Graphics g) throws SlickException
+  public void render() throws SlickException
   {
       //si personnage marche
       if(isRunningH){

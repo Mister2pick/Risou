@@ -18,20 +18,22 @@ public class main extends StateBasedGame
   public void initStatesList(GameContainer gc) throws SlickException
   {
 	  player = new Entity();
-	  addState((GameState)player);
+	  player.init();
   }
  
 
 @Override
   public void update(GameContainer gc, int delta) throws SlickException
   {
-	  
+	  player.update(gc.getInput());
   }
  
   @Override
   public void render(GameContainer gc, Graphics g) throws SlickException
   {
-	  //world.gen("1.map");
+	  world.gen("1.map");
+	  player.render();
+	  
   }
  
   public static void main(String[] args) throws SlickException
